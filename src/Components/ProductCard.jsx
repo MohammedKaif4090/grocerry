@@ -7,7 +7,7 @@ const ProductCard = ({ image, title, price, description }) => {
   return (
     <motion.div
       whileHover={{ scale: 1.03 }}
-      className="mx-1 relative w-[180px] sm:w-[300px] bg-white rounded-2xl shadow-2xl p-4 text-center overflow-visible transition-all duration-300 group"
+      className="mx-1.5 relative w-[180px] sm:w-[300px] bg-white rounded-2xl shadow-2xl p-4 text-center overflow-visible transition-all duration-300 group"
     >
       {/* Ribbon Style Price */}
       <div className="ribbon-3d-wave text-sm sm:text-xs">₹{price}</div>

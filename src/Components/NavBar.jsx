@@ -22,24 +22,53 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex justify-between items-center px-4 py-2 shadow-[0_4px_12px_rgba(245,245,220,0.8)]">
-      {/* Logo */}
-      <Link to="/">
-        <div className="flex items-center gap-2">
-          <img src={logo} alt="logo" className="w-52 h-24" />
-        </div>
-      </Link>
-
-      {/* Menu + Search */}
-      <ul className="hidden md:flex gap-8 text-yellow-500 font-semibold text-xl items-center">
-        <li>
-          <Link to="/" className="text-white hover:border-b-2 border-yellow-400 pb-1">
-            Home
+    <>
+      <nav className="px-4 py-2 shadow-[0_4px_12px_rgba(245,245,220,0.8)] bg-white">
+        {/* Row 1: Logo + Cart + Signup */}
+        <div className="flex justify-between items-center">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-2">
+            <img src={logo} alt="logo" className="w-40 h-20 object-contain" />
           </Link>
-        </li>
-        <li className="flex">
+
+          {/* Desktop Menu + Search */}
+          <ul className="hidden md:flex gap-8 text-yellow-500 font-semibold text-xl items-center">
+            <li>
+              <Link to="/" className="text-white hover:border-b-2 border-yellow-400 pb-1">
+                Home
+              </Link>
+            </li>
+            <li className="flex">
+              <input
+                className="border border-yellow-500 rounded-s-lg py-2 w-[600px] px-4"
+                type="text"
+                placeholder="Search..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                onKeyDown={handleKeyPress}
+              />
+              <button
+                onClick={handleSearch}
+                className="bg-[#FFD95A] text-black px-4 py-2 border border-yellow-500 rounded-e-lg font-semibold flex items-center justify-center"
+              >
+                <FaSearch />
+              </button>
+            </li>
+          </ul>
+
+          {/* Cart + Sign Up */}
+          <div className="flex items-center gap-4">
+            <FaShoppingCart className="text-2xl" />
+            <button className="bg-[#FFD95A] text-black px-4 py-2 rounded-full font-semibold">
+              Sign Up
+            </button>
+          </div>
+        </div>
+
+        {/* Row 2 (Mobile Only): Search bar */}
+        <div className="w-full mt-2 flex md:hidden">
           <input
-            className="border border-yellow-500 rounded-s-lg py-2 w-[600px] px-4"
+            className="border border-yellow-500 rounded-s-lg py-2 px-4 w-full"
             type="text"
             placeholder="Search..."
             value={searchQuery}
@@ -52,17 +81,9 @@ const Navbar = () => {
           >
             <FaSearch />
           </button>
-        </li>
-      </ul>
-
-      {/* Cart + Sign Up */}
-      <div className="flex items-center gap-4">
-        <FaShoppingCart className="text-2xl " />
-        <button className="bg-[#FFD95A] text-black px-4 py-2 rounded-full font-semibold">
-          Sign Up
-        </button>
-      </div>
-    </nav>
+        </div>
+      </nav>
+    </>
   );
 };
 

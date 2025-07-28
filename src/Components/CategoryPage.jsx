@@ -37,7 +37,7 @@ const CategoryPage = () => {
     <div className="relative">
       {/* Category Bar */}
       <div className="px-4 py-6 bg-white z-0">
-        <div className="flex  gap-3 overflow-x-auto scrollbar-hide justify-around">
+        <div className="flex gap-3 overflow-x-auto scrollbar-hide justify-around">
           {categories.map((category, index) => (
             <div
               key={index}
@@ -62,7 +62,7 @@ const CategoryPage = () => {
       </div>
 
       {/* Product Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 justify-center px-4 pb-8 z-0 mx-0 sm:mx-28">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 justify-center z-0 mx-0 sm:mx-28">
         {filteredProducts.map((item) => (
           <div
             key={item.id || item.title}
