@@ -1,0 +1,49 @@
+
+.ribbon-3d-wave {
+  position: absolute;
+  top: 20px;
+  left: -10px;
+  background: linear-gradient(120deg, #FFD700, #FFC300);
+  color: #111;
+  font-weight: 700;
+  padding: 10px 40px 10px 25px;
+  font-size: 14px;
+  border-radius: 0 999px 999px 0;
+  box-shadow: inset -4px 0 8px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  animation: waveMotion 2s ease-in-out infinite;
+  transform-origin: left center;
+  overflow: visible;
+}
+
+/* Triangle fold on top-left corner */
+.ribbon-3d-wave::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-bottom: 10px solid #d1a600;
+  z-index: -1;
+}
+
+@keyframes waveMotion {
+  0%, 100% {
+    transform: rotateZ(0deg);
+  }
+  50% {
+    transform: rotateZ(1.5deg);
+  }
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
