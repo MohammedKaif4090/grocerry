@@ -62,7 +62,7 @@ const CategoryPage = () => {
       </div>
 
       {/* Product Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 justify-center z-0 mx-0 sm:mx-28">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 justify-center z-0 mx-3 sm:mx-28">
         {filteredProducts.map((item) => (
           <div
             key={item.id || item.title}
